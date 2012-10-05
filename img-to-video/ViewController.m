@@ -30,6 +30,7 @@
     
     
     ///////////// setup OR function def if we move this to a separate function ////////////
+    // this should be moved to its own function, that can take an imageArray, videoOutputPath, etc...
     //    - (void)exportImages:(NSMutableArray *)imageArray
     // asVideoToPath:(NSString *)videoOutputPath
     // withFrameSize:(CGSize)imageSize
