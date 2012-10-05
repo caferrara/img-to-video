@@ -162,7 +162,7 @@
     // this is the video file that was just written above, full path to file is in --> videoOutputPath
     NSURL    *video_inputFileUrl = [NSURL fileURLWithPath:videoOutputPath];
     
-    // final video output...
+    // create the final video output file as MOV file - may need to be MP4, but this works so far...
     NSString *outputFilePath = [documentsDirectory stringByAppendingPathComponent:@"outputFile.mov"];
     NSURL    *outputFileUrl = [NSURL fileURLWithPath:outputFilePath];
     
@@ -194,6 +194,13 @@
          //[self saveVideoToAlbum:outputFilePath];
      }
      ];
+    
+    ///// THAT IS IT DONE... the final video file will be written here...
+    NSLog(@"DONE.....outputFilePath--->%@", outputFilePath);
+    
+    // the final video file will be located somewhere like here:
+    // /Users/caferrara/Library/Application Support/iPhone Simulator/6.0/Applications/D4B12FEE-E09C-4B12-B772-7F1BD6011BE1/Documents/outputFile.mov
+    
     
     ////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////
