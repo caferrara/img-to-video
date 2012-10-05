@@ -163,7 +163,7 @@
     NSURL    *video_inputFileUrl = [NSURL fileURLWithPath:videoOutputPath];
     
     // create the final video output file as MOV file - may need to be MP4, but this works so far...
-    NSString *outputFilePath = [documentsDirectory stringByAppendingPathComponent:@"outputFile.mov"];
+    NSString *outputFilePath = [documentsDirectory stringByAppendingPathComponent:@"final_video.mp4"];
     NSURL    *outputFileUrl = [NSURL fileURLWithPath:outputFilePath];
     
     if ([[NSFileManager defaultManager] fileExistsAtPath:outputFilePath])
@@ -186,7 +186,9 @@
     
     
     AVAssetExportSession* _assetExport = [[AVAssetExportSession alloc] initWithAsset:mixComposition presetName:AVAssetExportPresetHighestQuality];
-    _assetExport.outputFileType = @"com.apple.quicktime-movie";
+    //_assetExport.outputFileType = @"com.apple.quicktime-movie";
+    _assetExport.outputFileType = @"public.mpeg-4";
+    //NSLog(@"support file types= %@", [_assetExport supportedFileTypes]);
     _assetExport.outputURL = outputFileUrl;
     
     [_assetExport exportAsynchronouslyWithCompletionHandler:
